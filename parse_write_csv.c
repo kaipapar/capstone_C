@@ -12,6 +12,8 @@
 
 int parser(char ****cleaned, char* file_in);
 int dupe(char ***cleaned, const char* kw);
+int sort(char ****cleaned);
+int compare(const void *a, const void *b);
 int writer(char ***cleaned, char* file_out);
 void EC(void *pointer);
 
@@ -34,6 +36,12 @@ int main() {
 
 
     parser(&cleaned, file_in);
+    sort(&cleaned);
+    int i = 0;
+    while (cleaned[i][0] != "\0"){
+        printf("sorted %d: %s \n",i,cleaned[i][0]);
+        i++;
+    }
     writer(cleaned, file_out);
 
 
@@ -74,11 +82,11 @@ int parser(char ****cleaned, char* file_in) {
             if (rowFields[i][0] != '\0'){
                 printf("FIELD %d: %s\n", cnt, rowFields[i]);
                 // add keyword to its own row if its not a dupe
-                if (dupe(*cleaned, rowFields[i]) == 0){
+                //if (dupe(*cleaned, rowFields[i]) == 0){
                     strcpy((*cleaned)[cnt][0], rowFields[i]);
                     printf("cleaned: %s\n", (*cleaned)[cnt][0]);
                     cnt++;   
-                }
+                //}
             }
         }
 		printf("\n");
@@ -90,7 +98,7 @@ int parser(char ****cleaned, char* file_in) {
 /* returns 0 if there are no duplicates */
 int dupe(char ***cleaned, const char* kw){
     cleaned[0][0] = "blah";
-    for (int i = 0; i<Y; i++){
+    for (int i = 0; i<Y; i++){ 
         printf("cleaned: %s, kw: %s \n", cleaned[i][0], kw);
         if (strcmp(cleaned[i][0], kw)) // if strcmp == 0 --> duplicate
             continue;
@@ -99,6 +107,16 @@ int dupe(char ***cleaned, const char* kw){
     }
     return 0;
 }
+
+
+int sort(char ****cleaned) {
+    qsort(*cleaned, Y, sizeof(char *), compare);
+    return 0;
+}
+int compare(const void *a, const void *b) {
+    return strcmp((*(const char**)a), (*(const char**)b));
+}
+
 
 int writer(char ***cleaned, char* file_out) {
 	
