@@ -10,53 +10,42 @@
 #define X 5
 #define KWLEN 50
 
-int parser(char ****cleaned, char* file_in);
-int dupe(char ***cleaned, const char* kw);
-int sort(char ****cleaned);
+int parser(char ***cleaned, char* file_in);
+char **remove_dupes(const char **cleaned);
+int sort(char ***cleaned);
 int compare(const void *a, const void *b);
-int writer(char ***cleaned, char* file_out);
+int writer(char **cleaned, char* file_out);
 void EC(void *pointer);
 
 int main() {
     char* file_in = "output.csv";
     char* file_out = "KWs_formatted.csv";
 
-    char ***cleaned = calloc(Y, sizeof(char **)); // to keep formatted keywords from parser
+    char **cleaned = calloc(Y, sizeof(char *)); // to keep formatted keywords from parser
 
-    EC((char ***)cleaned);
+    EC((char **)cleaned);
 
     for (int i=0; i < Y; i++){
-        cleaned[i] = calloc(X, sizeof(char *)); //allocate x columns
-        EC((char **) cleaned[i]);
-        for (int j=0; j<X; j++){
-            cleaned[i][j] = calloc(KWLEN, sizeof(char));
-            EC((char *) cleaned[i][j]);
-        }
+        cleaned[i] = calloc(KWLEN, sizeof(char)); //allocate x columns
+        EC((char *) cleaned[i]);
     }
-
 
     parser(&cleaned, file_in);
     sort(&cleaned);
-    int i = 0;
-    while (cleaned[i][0] != "\0"){
-        printf("sorted %d: %s \n",i,cleaned[i][0]);
-        i++;
-    }
-    writer(cleaned, file_out);
-
-
+    char **no_dupes = remove_dupes((const char **)cleaned);
+    writer(no_dupes, file_out);
 
     for (int i = 0; i<Y; i++){
-        for (int j = 0; j<X; j++)
-            free(cleaned[i][j]);
         free(cleaned[i]);
+        free(no_dupes[i]);
     }
     free(cleaned);
+    free(no_dupes);
 
     return 0;
 }
 
-int parser(char ****cleaned, char* file_in) {
+int parser(char ***cleaned, char* file_in) {
     int i =  0;
     int row_cnt = 0;
     int cnt = 1; // start from one because of header
@@ -83,8 +72,8 @@ int parser(char ****cleaned, char* file_in) {
                 printf("FIELD %d: %s\n", cnt, rowFields[i]);
                 // add keyword to its own row if its not a dupe
                 //if (dupe(*cleaned, rowFields[i]) == 0){
-                    strcpy((*cleaned)[cnt][0], rowFields[i]);
-                    printf("cleaned: %s\n", (*cleaned)[cnt][0]);
+                    strcpy((*cleaned)[cnt], rowFields[i]);
+                    printf("cleaned: %s\n", (*cleaned)[cnt]);
                     cnt++;   
                 //}
             }
@@ -95,21 +84,34 @@ int parser(char ****cleaned, char* file_in) {
     CsvParser_destroy(csvparser);
     return 0;
 }
-/* returns 0 if there are no duplicates */
-int dupe(char ***cleaned, const char* kw){
-    cleaned[0][0] = "blah";
-    for (int i = 0; i<Y; i++){ 
-        printf("cleaned: %s, kw: %s \n", cleaned[i][0], kw);
-        if (strcmp(cleaned[i][0], kw)) // if strcmp == 0 --> duplicate
-            continue;
-        else 
-            return 1;
+/* returns array of strings with no duplicates */
+char **remove_dupes(const char **cleaned){
+    char **no_dupes = calloc(Y, sizeof(char *));
+    int cnt = 0;
+    EC((char **)no_dupes);
+    for (int i=0; i < Y; i++){
+        no_dupes[i] = calloc(KWLEN, sizeof(char)); //allocate x columns
+        EC((char *) no_dupes[i]);
     }
-    return 0;
+    printf("check: %s\n",cleaned[0]);
+    for (int i = 0; i < Y-1; i++){
+        if (cleaned[i] == NULL || cleaned[i+1] == NULL){
+            printf("check: %d \n", i);
+            continue;            
+        } else if (compare(&cleaned[i], &cleaned[i+1]) != 0){
+            // no_dupes[cnt] = cleaned[i];
+            strcpy(no_dupes[cnt], cleaned[i]);
+            printf("nodupes: %d, %s \n",cnt,no_dupes[cnt]);
+            cnt++;
+        }
+    }
+
+
+    return no_dupes;
 }
 
 
-int sort(char ****cleaned) {
+int sort(char ***cleaned) {
     qsort(*cleaned, Y, sizeof(char *), compare);
     return 0;
 }
@@ -118,7 +120,7 @@ int compare(const void *a, const void *b) {
 }
 
 
-int writer(char ***cleaned, char* file_out) {
+int writer(char **cleaned, char* file_out) {
 	
 	CsvWriter *csvWriter = CsvWriter_new(file_out, ",", 0);  
     char *header[] = {"Keywords", "Category[0-4]", "what", "else", "could here lay"};
@@ -130,10 +132,19 @@ int writer(char ***cleaned, char* file_out) {
                     printf("Error: %s\n", CsvWriter_getErrorMessage(csvWriter));    
                     return 1;   
                 }
-            } else if (CsvWriter_writeField(csvWriter, cleaned[i][j])) {    
-				printf("Error: %s\n", CsvWriter_getErrorMessage(csvWriter));    
-				return 1;    
-			}    
+            }  
+            if (j==0) {
+                if (CsvWriter_writeField(csvWriter, cleaned[i])) {    
+                    printf("Error: %s\n", CsvWriter_getErrorMessage(csvWriter));    
+                    return 1;    
+                }                    
+            } else {
+                if (CsvWriter_writeField(csvWriter, "\0")) {    
+                    printf("Error: %s\n", CsvWriter_getErrorMessage(csvWriter));    
+                    return 1;    
+                }                             
+            }
+
 		}    
 		CsvWriter_nextRow(csvWriter);    
 	}    
