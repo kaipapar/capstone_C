@@ -1,0 +1,95 @@
+studyEntitlementDays,studyCredits,grade,supervisorId,pages,words,onlineReferences,printedReferences,weakReferences,keywordAppearances,keywords
+1127,250,5,5,52,12018,30,34,2,200,zephyr,power management,rtos,embedded systems,iot
+1900,241,4,5,48,10483,49,5,3,271,front end,react,polaris,shopify,e-commerce,web development
+1723,254,4,1,44,9203,,,,171,react,re dux,mongodb,nodejs,expressjs,web development
+1659,243,4,1,38,8809,,,,145,bootstrap,html,css,javascript,responsive web design,front -end framework,mobile -first design
+1382,250,4,2,50,13591,11,36,5,416,testing,test management system,testing tool,test link
+1752,243,4,2,55,11022,26,0,9,117,web development,mern stack,full-stack applications,role based user access control
+1749,244,2,8,52,9775,11,3,1,410,wordpress,joomla,drupal,web publishing system,web development,website
+2112,242,3,13,35,8833,2,2,0,96,machine learning,supervised learning,data science,visualization,and automated models
+3312,262,4,2,39,6359,9,1,0,195,raspberry pi,pwa,flask,petfeeder,iot,service worker
+256,249,4,5,64,10463,54,1,10,584,web components,vaadin,polymer,pwa,javascript,testing
+998,252,4,5,46,8557,26,2,0,291,web component,dom,shadow dom,html template,custom element,litelement,heroku
+259,251,5,1,58,9828,0,19,0,232,internet,peer -to-peer networks,tcp/ip,cloud services,ipv6,software defined networks
+2156,241,1,8,52,9640,2,0,0,27,course review,student assessment,job seeking,cv creation,cv review,student profile,student clubs
+1705,246,3,1,41,8354,3,3,2,341,october cms,cms,laravel framework,cms platform
+1750,240,2,4,43,6462,12,2,0,1,home assistant raspberry pi 3 sensors rela y rpi camera buzzer
+1754,241,4,1,75,16095,49,28,3,290,biometrics,multi -biometrics,identification,biometric templates,security protocols,template protection schemes
+1513,240,2,5,37,6617,2,0,0,129,progressive web application,workbox,service worker,app manifest,push notification,htpps
+1744,243,5,7,83,16859,35,2,1,54,front -end web development,web development,web framework,web library,web platform
+1758,249,4,11,28,7382,,,,111,raspberry pi,internet of things,microcontrollers,edge computing,bluetooth
+863,259,5,2,46,11667,,,,48,open source,medical imaging,positron emission tomography,diagnostic radiology,software evaluation,data analysis,software testing
+1820,240,3,17,35,5546,,,,129,machine vision,neuroscience,drug discovery,microscopy,python,opencv,ai,edge detection,image segmentation
+1392,242,4,3,36,7468,24,0,6,637,scan,scanner,3d,point clouds,welding,mesh,model,engineering,robotics
+1269,240,5,2,43,10119,28,1,9,77,data preprocessing,log management,elastic stack
+2758,240,3,6,36,8707,19,2,3,428,digital communication,project management,slack,slackbot,chatbots,bots,automation,development,deployment
+2278,241,5,2,46,11163,52,6,2,81,deep learning,auto matic classification,vgg16,generative adversarial networks,chest radiographs,medical image,cardiomegaly,enlarged hear t
+2250,240,4,6,46,9482,4,31,0,254,social,mental,physical,gaming,internet gaming disorder
+1358,242,5,4,36,7574,26,12,5,170,computer vision,led panel,automation,opencv
+654,253,5,1,113,19458,1,5,0,397,kickstart,centos,hardening,kvm,openscap,usgcb
+1684,243,3,13,54,11926,30,15,1,473,iot,devices visibility,ble,protocol,silentdefense,cisco meraki,aruba,python,lua
+217,254,4,8,40,9595,1,50,0,228,games,gamification,education,case study,kodu,interviews,microsoft,microsoft finland
+1852,240,4,2,52,7730,22,0,6,151,single -page application,cloud computing,serverless,authentication,angular,mongodb
+1374,281,3,14,35,5837,19,10,0,102,e-commerce website,responsive web application,react,shopping cart,online store,json,netlify
+1569,244,5,9,38,7385,,,,225,network,wireless,cisco,implementation
+673,244,3,5,26,6216,22,4,2,302,merger,success,data migration,erp,legacy software
+1248,250,4,2,31,6207,24,2,3,21,rfid mfrc522,raspberry pi 4,lcd i2c model 16x2,raspbian,linux
+1734,240,3,8,32,6462,2,8,0,85,unity,word embedding,cosine similarity,glove algorithm,fuzzy logic
+1742,241,5,8,66,15860,36,14,2,381,risc -v,vhdl,software simulations,instruction set architecture,fpga,prng
+1174,240,4,10,47,10623,,,,202,video -games,procedural modelling,procedural generation,architectural environment,houdini,unity,3ds max,esri,cityengine,ghost town,virdi
+2107,240,3,3,46,10676,5,2,2,196,virtual reality,hand -tracking,co ntrollers,oculus quest
+1003,244,4,5,60,10804,3,0,0,325,web apps,web,native apps,hybrid app,service workers,app shell,cache api,device integration and notification api
+2351,240,2,8,42,7513,1,3,0,439,html,css,javascript,web components,custom elements,dom,shadow dom,html template,vanilla javascript,react js,github,github pages,microfrontend
+658,253,4,5,35,9133,,,,340,animation,physics,simulation,bullet physics,cad
+2013,241,2,6,29,4721,,,,55,cms,library,management system,database
+1303,243,5,2,131,22280,39,3,3,375,progressive,web applications,fetching,caching,service worker,push -notifications,media api
+1978,269,5,10,37,7885,1,13,0,86,gambling games,game design,user experience,flow
+2124,244,2,8,38,7770,16,0,1,183,reactjs,components,redux,jsx,javascript,front -end,virtual domhtml
+1232,245,4,5,45,9688,18,10,4,123,library management system,project planning,quality management,php,web -based application
+1204,243,3,11,41,10526,,,,30,evolved packet core,mobility management entity,nist standards,itu standards
+2208,240,4,1,51,9903,35,0,3,648,webassembly,malware,cryptomining,rust,c /c++,javascript,keylogger,performance,portability,risks
+1859,244,3,5,36,5363,13,1,3,135,react,redux,mongodb,node.js,express.js
+1928,261,3,2,47,9970,,,,166,front -end testing,javascript,css,testing tools,continuous integration,software quality assurance
+3196,241,3,8,36,5681,16,1,5,106,software engineering,application design,database,blind box,business innovation
+1927,243,3,5,71,11141,40,0,8,265,front-end development,web development,react,front-end testing
+1347,241,5,3,37,7937,6,2,2,85,microservices,rest api,virtual machine,asiakastieto
+1691,241,2,5,35,6529,9,1,4,73,website development,html5,css3,javascript,web design,ux design,ui design
+1739,243,3,7,40,11471,23,11,1,272,emg,imu,gesture recognit ion,myo armband,ble,home assistant,mqtt
+1347,241,5,3,35,8651,,,,60,data -driven,services,feedback loop
+1696,241,3,15,30,8576,16,5,6,154,iot,embedded,cloud,cybersecurity
+1757,259,4,10,56,9656,,,,307,profiler,performance,c#,.net framework,software development
+1742,241,3,7,39,9940,,,,21,cloud services,cloud security attacks,cloud security measures,cloud security prevention
+2083,248,5,16,37,8708,,,,48,public sector,procurement,software,sales,process,consulting
+2115,280,4,3,52,13748,0,93,0,521,user experience,speech recognition,serious games,ai,artificial intelligence,ibm watson
+1374,245,4,8,66,11547,28,2,3,97,natural language processing,computer vision,machine learning,model,react native,python,flask
+1360,242,4,14,43,10209,15,15,5,237,extract,transform,load,scripting,integration system,data integration,etl,data warehouse
+1739,263,4,10,46,9790,,,,224,gamification,serious game s,game elements,player psychology,mockup
+1373,243,2,5,55,7738,,,,580,react,react js,redux,state,props,life cycle,actions,reducers,stores,app,web application
+1388,255,3,14,43,9017,32,2,3,160,machine learning,marketing,digital marketing,artificial intelligence
+1206,256,3,4,70,9459,27,4,6,180,websocket,opus,audio codec,bit rate,protocol,requests,encode,decode
+2103,249,4,13,43,9166,,,,439,cloud computing,cloud se curity,cryptography,cloud,cloud service provider,cryptography
+2665,240,3,5,36,9408,,,,484,tcp/ip,network,implementation,design,reliability,scalability,topology
+1386,242,3,10,26,8308,,,,43,continuous integration,continuous delivery,test automation,test driven development,build automation,unity,game development
+451,245,4,8,41,8629,7,3,1,131,visual scripting language,visual p rogramming,unity,playmaker,unreal engine,blueprints,user experience,user story
+2016,240,3,11,43,9280,,,,159,property management automation,artificial intelligence,machine learning,analytics,iot,software-as-a-service
+1365,244,4,5,42,11741,11,1,1,168,web development,software development,javascript,react,node,agile
+1357,243,3,2,47,6919,,,,424,docker,containerization,wordpress,software,engineering,container image s
+1751,242,2,5,30,5278,13,0,0,95,progressive web application,multiplatform,app manifest,service worker,app shell model,push notifications,https
+2423,271,4,6,54,8222,19,10,7,149,data visualization,dashboard,business intelligence,power bi,google analytics
+1199,242,4,5,56,10227,32,6,10,191,continuous integration,continuous development,continuous deployment,docker,gitlab,react,nodejs,fly.io,cypress,jest,eslint
+1511,244,4,2,63,7965,33,32,1,43,block -based programming,blockly,iot,software development,visual programming
+843,240,4,1,33,7847,16,0,0,149,support,process,deployment,zoho
+1035,240,4,10,48,10150,16,8,1,153,virtual reality,vr,control input,heuristic evaluation,vr training,simulation
+1148,246,4,8,40,7802,,,,43,website development,performance improvements,templates,cms,front-end
+1264,252,5,10,53,11151,29,12,0,48,user experience,virtual reality,digital games,cost-benefit analysis
+2595,253,3,6,35,10787,20,7,0,316,e-voting,i-voting,election,voter turnout,verification,authentication
+2108,240,3,7,42,7130,23,3,0,33,mongodb indexing,nosql,mongodb performance
+2460,243,3,2,29,5669,10,4,0,62,iot device,machine learning,embedded system,nltp,text processing,basic concept of modern computing
+1728,242,4,7,62,12972,39,1,11,215,web application,react,google firebase,graph,visualize,sum mary table,data
+1565,240,4,3,45,10488,2,9,1,277,game,software architecture,c#,unity,design pattern,event -driven programming,data -driven programming
+1849,250,4,1,49,14060,,,,261,cloud computing,google cloud platform,server,virtual machine,installation,configuration
+1738,240,1,5,39,6131,7,12,0,109,sentiment analysis,machine learning,climate change,twitter
+1297,246,5,4,30,4486,22,5,1,11,microcomputers,interactive audio,generative music,environmental sensors,prototype,start -up
+1110,248,4,8,42,10211,8,14,0,119,cyber security,a wareness training,information and communications technology,information security management,thefirma
+883,240,4,8,70,16754,22,5,0,198,inventory,business intelligence,sms message,computer engineering,automated application
+2209,250,3,6,33,8869,25,127,2,216,ai,robot,ethics,human intelligence

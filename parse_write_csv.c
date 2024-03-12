@@ -6,20 +6,20 @@
 #include "csvparser.h"
 #include "csvwriter.h"
 
-#define Y 450
-#define X 5
-#define KWLEN 50
+#define Y 1000
+#define X 20
+#define KWLEN 100
 
 int parser(char ***cleaned, char* file_in);
-char **remove_dupes(const char **cleaned);
+char **remove_dupes(const char **cleaned,int ele);
 int sort(char ***cleaned);
 int compare(const void *a, const void *b);
 int writer(char **cleaned, char* file_out);
 void EC(void *pointer);
 
 int main() {
-    char* file_in = "output.csv";
-    char* file_out = "KWs_formatted.csv";
+    char* file_in = "old_KWs_xtracted.csv";
+    char* file_out = "KWs_old_data.csv";
 
     char **cleaned = calloc(Y, sizeof(char *)); // to keep formatted keywords from parser
 
@@ -32,7 +32,8 @@ int main() {
 
     parser(&cleaned, file_in);
     sort(&cleaned);
-    char **no_dupes = remove_dupes((const char **)cleaned);
+    int elements = sizeof(cleaned)/sizeof(*cleaned);
+    char **no_dupes = remove_dupes((const char **)cleaned, elements);
     writer(no_dupes, file_out);
 
     for (int i = 0; i<Y; i++){
@@ -50,7 +51,7 @@ int parser(char ***cleaned, char* file_in) {
     int row_cnt = 0;
     int cnt = 1; // start from one because of header
     //                                   file, delimiter, first_line_is_header?
-    CsvParser *csvparser = CsvParser_new("output.csv", ",", 1);
+    CsvParser *csvparser = CsvParser_new(file_in, ",", 1);
 
     CsvRow *row;
     const CsvRow *header = CsvParser_getHeader(csvparser);
@@ -85,8 +86,8 @@ int parser(char ***cleaned, char* file_in) {
     return 0;
 }
 /* returns array of strings with no duplicates */
-char **remove_dupes(const char **cleaned){
-    char **no_dupes = calloc(Y, sizeof(char *));
+char **remove_dupes(const char **cleaned, int ele){
+    char **no_dupes = calloc(ele, sizeof(char *));
     int cnt = 0;
     EC((char **)no_dupes);
     for (int i=0; i < Y; i++){
@@ -94,7 +95,7 @@ char **remove_dupes(const char **cleaned){
         EC((char *) no_dupes[i]);
     }
     printf("check: %s\n",cleaned[0]);
-    for (int i = 0; i < Y-1; i++){
+    for (int i = 0; i < ele-1; i++){
         if (cleaned[i] == NULL || cleaned[i+1] == NULL){
             printf("check: %d \n", i);
             continue;            
@@ -102,7 +103,7 @@ char **remove_dupes(const char **cleaned){
             // no_dupes[cnt] = cleaned[i];
             strcpy(no_dupes[cnt], cleaned[i]);
             printf("nodupes: %d, %s \n",cnt,no_dupes[cnt]);
-            cnt++;
+            cnt++;  
         }
     }
 
